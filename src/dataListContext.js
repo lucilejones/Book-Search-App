@@ -45,8 +45,10 @@ function DataListContextProvider(props) {
     }
 
     function getBookDetails(id) {
+        console.log(id)
         axios.get(`https://openlibrary.org${id}.json`)
             .then(response => setOneBook(response.data))
+            .catch(err => console.log(err))
     }
 
     function saveBookToList(savedBook) {
